@@ -20,6 +20,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/login").permitAll()// I am allowing to everyone, to call every service under /login, /login included
                 .antMatchers("/**").authenticated()// I am allowing only authenticated users to call the all the service under /
-                .and().formLogin();//.failureHandler(customAuthenticationFailureHandler());
+                .and().formLogin().failureHandler(customAuthenticationFailureHandler());
     }
 }
