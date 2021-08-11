@@ -10,6 +10,10 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    @Bean
+    CustomAuthenticationFailureHandler customAuthenticationFailureHandler() {
+        return new CustomAuthenticationFailureHandler();
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
